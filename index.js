@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('public'));
 
 const API_URL = "https://newsapi.org/v2/top-headlines"
-// https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey=896202d1a9ea47f4ae2f486c322596c7
+// https://newsapi.org/v2/top-headlines?country=de&category=business&apiKey
 // const SourceParams = {
 //   sources : "bbc-news",
   
