@@ -1,0 +1,429 @@
+*{
+  box-sizing: inherit;
+  line-height: 2.3rem;
+  font-family: "Lato", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+body{
+  box-sizing: border-box;
+  background-color: whitesmoke;
+}
+
+header{
+  background-color: aliceblue;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.081);
+  margin-bottom: 1rem;
+}
+.nav__bar{
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  min-height: 7rem;
+  /* border: 2px solid red; */
+  position: relative;
+  min-height: 72px;
+  /* border: 2px solid red; */
+  
+}
+a{
+  text-decoration: none;
+}
+.nav__link{
+  transition: all .5s;
+
+}
+.nav__link:hover{
+  /* color: rgb(8, 0, 255); */
+  color: orange;
+  font-size: 1.7rem;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+.logo{
+  height: 4rem;
+  border-radius: 10px;
+  object-fit: cover;
+  position: relative;
+}
+.logo::after{
+  display: block;
+  content: "flashNews";
+  font-size: 1rem;
+  font-weight: bold;
+  color: red;
+  position: absolute;
+  bottom: -2rem;
+  left: -4px;
+}
+.nav__menu{
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+.nav__item{
+  list-style: none;
+}
+
+.hamburger{
+  display: none;
+
+}
+.bar{
+  height: 5px;
+  width: 25px;
+  display: block;
+  background-color: black;
+  margin-top: .3rem;
+  transition: all .5s;
+}
+
+.drop{
+  position: relative;
+  width: fit-content;
+ 
+}
+.cart__drop{
+  display: none;
+  padding: 1rem;
+  
+  margin-top: 1rem;
+  
+  flex-direction: column;
+  background-color: gray;
+  border-radius: 4px;
+  
+  position: absolute;
+  top: 2rem;
+  transition: all 0.5s ease;
+ 
+  
+}
+.cart__drop.active{
+  display: flex;
+  height: unset;
+  justify-content: center;
+  align-items: center;
+  display: block;
+}
+.crop__link{
+  text-decoration: none;
+}
+.drop__icon{
+  vertical-align: middle;
+  text-decoration: none;
+}
+
+.banner{
+  /* border: 2px solid red; */
+  display: block;
+  letter-spacing: 1rem;
+  text-align: center;
+  width: 100%;
+  background-color: orange;
+  padding: 4rem;
+  border-radius: 5px;
+  pointer-events: none;
+  font-size: 3rem;
+}
+.banner h1{
+  animation: moveInRight 1s ease-in-out;
+  
+}
+
+
+/* NEWS */
+main{
+  padding: 2vh;
+  min-height: 84vh;
+}
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+
+}
+.news__wrap{
+  margin-top: 2rem;
+  /* border: 2px solid red; */
+  background-color: rgba(168, 168, 168, 0.232);
+}
+.news_container{
+  display: flex;
+  flex-direction: column;
+  
+  transition: all .5s;
+}
+.news_container:hover{
+  transform: translateY(-1rem);
+  border-radius: 5px;
+  box-shadow: 0 0  6px rgba(0, 0, 0, 0.563);
+
+
+}
+.news__info{
+  /* background-color: red; */
+  padding: 1rem;
+  
+
+}
+.author{
+  font-weight: 900;
+  letter-spacing: .4rem;
+  box-shadow: 0 0 4px black;
+  display: inline;
+  padding: .4rem;
+}
+
+.news__image{
+  width: 100%;
+  object-fit: cover;
+}
+.title{
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.title:hover{
+  color: orange;
+}
+
+.news__date{
+  color: #4509;
+  font-weight: 900;
+  display: flex;
+  justify-content: space-around;
+  gap: .2rem;
+}
+
+
+@keyframes moveInRight {
+  0%{
+  opacity: 0;
+  transform: translateX(-40rem);
+  
+  }
+  80%{
+    opacity: 1;
+    transform: translateX(1rem);
+  }
+
+  100%{
+    transform: translate(0);
+    
+  }
+}
+
+
+@media (max-width:1000px) {
+  .grid{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 768px) {
+  .hamburger{
+    display: block;
+  }
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(10px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(2){
+    /* transform: translateY(-8px); */
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-10px) rotate(-45deg);
+  }
+
+  .nav__bar{
+    justify-content: space-between;
+  }
+  .nav__menu{
+    position: absolute;
+    display: none;
+    left: 0;
+    /* background-color: red; */
+    background-color: darkkhaki;
+    padding: .5rem;
+    flex-direction: column;
+    gap: 0;
+    font-size: 1rem;
+    align-items: center;
+    width: 100%;
+    transition: all .4s ease;
+  }
+  .nav__menu.active{
+    display: block;
+    top: 8rem;
+    transition: all .4s;
+  }
+  .main.active{
+    margin-top: 10rem; 
+    transition: all .5s;
+    
+  }
+  .banner{
+    padding: 1rem;
+  }
+  .banner h1{
+    font-size: 2rem;
+    line-height: 4rem;
+  }
+
+  .grid{
+    grid-template-columns: 1fr;
+  }
+
+
+  .news__title{
+    font-size: 2rem;
+    /* background-color: red */
+    line-height: unset;
+  }
+}
+
+
+
+.footer{
+  background-color: rgba(255, 166, 0, 0.877);
+  height: 4rem;
+  color: gray;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 1.7px;
+  pad: 1rem;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  
+}
+.social-icons{
+  display: flex;
+  gap: 1rem;
+  font-size: 2rem;
+}
+
+
+/* nwa Page*/
+article{
+  padding: 4vh;
+}
+.article__head{
+  margin: auto;
+  margin-bottom: 2rem;
+  
+}
+.source{
+  
+  font-weight: 900;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-wrap: wrap;
+  padding: 3rem;
+}
+.news__title{
+  font-size: 2rem;
+  line-height: 3rem;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+.news__title:hover{
+  color: black;
+}
+.news__description{
+  font-size: 1.4rem;
+  color: #2727279e;
+}
+.img__wrap{
+  width: 100%;
+  text-align: center;
+}
+.news__image{
+  width: 100%;
+  
+  object-fit: cover;
+  
+}
+
+.content{
+  font-size: 1rem;
+  text-align: justify;
+  max-width: 50rem;
+  font-size: 1.4rem;
+}
+
+.time{
+  color: #27272773;
+  font-weight: 900;
+  float: right;
+  margin-top: -2rem;
+}
+
+.further{
+  text-decoration: underline;
+ 
+}
+
+@media (max-width:600px) {
+  article{
+    padding: 0;
+  }
+  
+
+  .source{
+    font-size: 2rem;
+    letter-spacing: .2rem;
+  }
+  .time{
+    margin: unset;
+  }
+}
+
+
+/*  About*/
+
+.profile__wrap{
+  text-align: center;
+
+}
+.profile__img{
+  width: 10rem;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 10rem;
+  
+}
+
+.description{
+  padding: 6vh;
+  text-align: justify;
+}
+
+.contact-box {
+  margin-top: 80px;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+.icon-text {
+  font-size: 1.1rem;
+}
+.icon-text i {
+  color: #0d6efd;
+  margin-right: 10px;
+}
+.social-icons a {
+  color: #0d6efd;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+.social-icons a:hover {
+  color: #0056b3;
+}
