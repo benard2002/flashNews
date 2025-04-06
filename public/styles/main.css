@@ -95,6 +95,7 @@ a{
   
   flex-direction: column;
   background-color: gray;
+  color: white;
   border-radius: 4px;
   
   position: absolute;
@@ -102,6 +103,9 @@ a{
   transition: all 0.5s ease;
  
   
+}
+.cart__drop a{
+  color: white;
 }
 .cart__drop.active{
   display: flex;
